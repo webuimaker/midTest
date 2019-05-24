@@ -1,0 +1,15 @@
+//link to product by converting the title to a slug
+.product
+    .product-image
+      = image_tag product.image
+    .product-content
+      .title
+        h3 = product.title
+      .price
+        p 
+          - currency = data.settings.units.currency || '€' 
+          = currency + product.price.to_s 
+      .weight
+        p 
+          - weight = data.settings.units.weight || 'kg'
+          = product.weight.to_s + weight
